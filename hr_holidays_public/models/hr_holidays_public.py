@@ -144,11 +144,6 @@ class HrHolidaysPublic(models.Model):
             employee = self.env["hr.employee"].browse(employee_id)
             partner = employee.address_id
         if partner_id:
-            if partner:
-                _logger.warning(
-                    "Both 'employee_id' and 'partner_id' were provided in the "
-                    "method's parameters. Ignoring 'employee_id'."
-                )
             partner = self.env["res.partner"].browse(partner_id)
         return partner
 
